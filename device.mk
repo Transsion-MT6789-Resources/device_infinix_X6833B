@@ -82,5 +82,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/mediatek
 
+# Updatable APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/infinix/X6833B/X6833B-vendor.mk)
