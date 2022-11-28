@@ -68,6 +68,9 @@ PRODUCT_PACKAGES += \
 # Include GSI keys
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
+# Project ID Quota
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 31
 
