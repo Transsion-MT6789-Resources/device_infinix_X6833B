@@ -34,6 +34,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 PRODUCT_PACKAGES += \
     update_engine \
+    update_engine_sideload \
     update_verifier \
     otapreopt_script \
     checkpoint_gc
