@@ -47,6 +47,9 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl:64 \
     android.hardware.boot@1.2-impl.recovery
 
+# Dalvik configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
