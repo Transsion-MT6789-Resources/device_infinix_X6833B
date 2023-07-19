@@ -465,6 +465,14 @@ vendor/firmware/soc_fm_v1_coeff.bin
 vendor/firmware/soc_fm_v1_patch.bin
 vendor/firmware/wifi.cfg
 
+# Fuelgauge
+vendor/bin/fuelgauged
+vendor/bin/fuelgauged_nvram
+vendor/etc/init/fuelgauged_init.rc
+vendor/etc/init/fuelgauged_nvram_init.rc
+vendor/lib/libfgauge_gm30.so
+vendor/lib64/libfgauge_gm30.so
+
 # Gatekeeper
 vendor/lib/hw/libMcGatekeeper.so
 vendor/lib/libMcClient.so
