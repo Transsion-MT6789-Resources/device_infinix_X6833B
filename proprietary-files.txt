@@ -1,5 +1,9 @@
 ## x6833b package version: X6833B-H894DEFGHI-T-GL-231102V2897, unless stated otherwise
 
+# AEE
+vendor/lib/libaedv.so
+vendor/lib64/libaedv.so
+
 # Audio
 vendor/lib/hw/audio.primary.mediatek.so
 vendor/lib/hw/audio.r_submix.mediatek.so
