@@ -59,7 +59,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@4.0.vendor \
-    libdrm.vendor
+    libdrm.vendor \
+    libutils-v32
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
