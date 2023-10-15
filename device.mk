@@ -70,7 +70,7 @@ PRODUCT_PACKAGES += \
 
 # Init files
 PRODUCT_PACKAGES += \
-	fstab.mt6789_vendor_ramdisk
+	fstab.mt6789.vendor_ramdisk
 
 # Include GSI keys
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
