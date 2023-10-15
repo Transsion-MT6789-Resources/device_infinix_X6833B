@@ -17,10 +17,12 @@ vendor /vendor erofs ro wait,slotselect,avb,logical,first_stage_mount
 
 
 product /product erofs ro wait,slotselect,avb,logical,first_stage_mount
+product /product ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
 
 
 system_ext /system_ext erofs ro wait,slotselect,avb,logical,first_stage_mount
+system_ext /system_ext ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
 
 
