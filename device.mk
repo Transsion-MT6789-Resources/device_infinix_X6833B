@@ -215,7 +215,8 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-	FrameworksResOverlay
+	FrameworksResOverlay \
+	SettingsResOverlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
