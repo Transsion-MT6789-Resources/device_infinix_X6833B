@@ -1,0 +1,35 @@
+service insmod_sh /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.${ro.hardware}.cfg
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on early-init
+    setprop vendor.all.modules.ready 0
+    write /proc/bootprof "modprobe: Load_Module_START"
+    start insmod_sh
+
+#SPD: add kswapd0 bind 0~5 core for XLBSSB-2493 by heyuan.li 20230217 start
+service tasksetStart_sh /vendor/bin/init.tasksetStart.sh
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on property:persist.vendor.powerhal.kswapd0_bind_enable=1
+    start tasksetStart_sh
+    setprop persist.vendor.powerhal.kswapd0_bind_enable -1
+
+service tasksetEnd_sh /vendor/bin/init.tasksetEnd.sh
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on property:persist.vendor.powerhal.kswapd0_bind_enable=0
+    start tasksetEnd_sh
+    setprop persist.vendor.powerhal.kswapd0_bind_enable -1
+#SPD: add kswapd0 bind 0~5 core for XLBSSB-2493 by heyuan.li 20230217 end
