@@ -1155,11 +1155,6 @@ service osi /system/bin/osi
     oneshot
     #seclabel u:r:osi:s0
 
-#BSP:add meta features XLQLBH-14 by wang.qin 20220412 start
-on property:persist.vendor.tran.wipedata=1 && property:ro.boot.atm=enable
-    tran_factory_reset
-#BSP:add meta features XLQLBH-14 by wang.qin 20220412 end
-
 #SPD: add resmonitor and smartpanel bind small core by rui.fu 20230117 start
 service spd_cpu_set_sh /vendor/bin/init.spd_cpu_set.sh
     class main

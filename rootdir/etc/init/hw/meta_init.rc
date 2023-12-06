@@ -413,10 +413,3 @@ on property:sys.usb.ffs.ready=1 && property:ro.boot.usbconfig=3 && property:sys.
 on property:persist.vendor.mediatek.fast_charging.support=*
     write /sys/devices/platform/charger/fast_chg_indicator ${persist.vendor.mediatek.fast_charging.support}
 
-#INTERNAL_END
-#BSP:add meta features XLQLBH-14 by wang.qin 20220412 start
-#TRANSSION_START
-on property:persist.vendor.tran.wipedata=1
-    tran_factory_reset
-#TRANSSION_END
-#BSP:add meta features XLQLBH-14 by wang.qin 20220412 end
