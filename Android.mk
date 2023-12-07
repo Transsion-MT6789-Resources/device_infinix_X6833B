@@ -12,6 +12,17 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
+AUDIO_SYMLINKS := \
+	$(TARGET_OUT_VENDOR)/lib/hw/audio.primary.$(TARGET_BOARD_PLATFORM).so \
+	$(TARGET_OUT_VENDOR)/lib/hw/audio.r_submix.$(TARGET_BOARD_PLATFORM).so \
+	$(TARGET_OUT_VENDOR)/lib64/hw/audio.primary.$(TARGET_BOARD_PLATFORM).so \
+	$(TARGET_OUT_VENDOR)/lib64/hw/audio.r_submix.$(TARGET_BOARD_PLATFORM).so
+
+
+$(AUDIO_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	$(hide) echo "Linking $@"
+	@ln -sf $(subst $(TARGET_BOARD_PLATFORM),mediatek,$(notdir $@)) $@
+
 DISPLAY_SYMLINKS := \
 	$(TARGET_OUT_VENDOR)/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
 
@@ -25,6 +36,7 @@ $(VENDOR_PLATFORM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@ln -sf $(TARGET_BOARD_PLATFORM)/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += \
+	$(AUDIO_SYMLINKS) \
 	$(DISPLAY_SYMLINKS) \
 	$(VENDOR_PLATFORM_SYMLINKS)
 
