@@ -38,6 +38,14 @@ $(GATEKEEPER_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Linking $@"
 	@ln -sf libMcGatekeeper.so $@
 
+KEYMASTER_SYMLINKS := \
+	$(TARGET_OUT_VENDOR)/lib/hw/kmsetkey.default.so \
+	$(TARGET_OUT_VENDOR)/lib64/hw/kmsetkey.default.so
+
+$(KEYMASTER_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	$(hide) echo "Linking $@"
+	@ln -sf $(subst default,trustonic,$(notdir $@)) $@
+
 VENDOR_PLATFORM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/, $(strip $(shell cat $(DEVICE_PATH)/symlink/vendor.txt)))
 $(VENDOR_PLATFORM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Linking $(notdir $@)"
@@ -47,6 +55,7 @@ ALL_DEFAULT_INSTALLED_MODULES += \
 	$(AUDIO_SYMLINKS) \
 	$(DISPLAY_SYMLINKS) \
 	$(GATEKEEPER_SYMLINKS) \
+	$(KEYMASTER_SYMLINKS) \
 	$(VENDOR_PLATFORM_SYMLINKS)
 
 endif

@@ -22,3 +22,7 @@ ro.vendor.mtk_pq_support=2
 
 # Gatekeeper
 ro.hardware.gatekeeper=trustonic
+
+# Keymaster
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.hardware.kmsetkey=trustonic
