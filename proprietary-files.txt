@@ -436,6 +436,12 @@ vendor/firmware/soc_fm_v1_coeff.bin
 vendor/firmware/soc_fm_v1_patch.bin
 vendor/firmware/wifi.cfg
 
+# Gatekeeper
+vendor/lib/hw/libMcGatekeeper.so
+vendor/lib/libMcClient.so
+vendor/lib64/hw/libMcGatekeeper.so
+vendor/lib64/libMcClient.so
+
 # Power
 vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
 vendor/etc/init/bootperf.rc

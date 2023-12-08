@@ -30,6 +30,14 @@ $(DISPLAY_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Linking $@"
 	@ln -sf $(TARGET_BOARD_PLATFORM)/$(notdir $@).$(TARGET_BOARD_PLATFORM) $@
 
+GATEKEEPER_SYMLINKS := \
+	$(TARGET_OUT_VENDOR)/lib/hw/gatekeeper.trustonic.so \
+	$(TARGET_OUT_VENDOR)/lib64/hw/gatekeeper.trustonic.so
+
+$(GATEKEEPER_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	$(hide) echo "Linking $@"
+	@ln -sf libMcGatekeeper.so $@
+
 VENDOR_PLATFORM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/, $(strip $(shell cat $(DEVICE_PATH)/symlink/vendor.txt)))
 $(VENDOR_PLATFORM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Linking $(notdir $@)"
@@ -38,6 +46,7 @@ $(VENDOR_PLATFORM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += \
 	$(AUDIO_SYMLINKS) \
 	$(DISPLAY_SYMLINKS) \
+	$(GATEKEEPER_SYMLINKS) \
 	$(VENDOR_PLATFORM_SYMLINKS)
 
 endif
