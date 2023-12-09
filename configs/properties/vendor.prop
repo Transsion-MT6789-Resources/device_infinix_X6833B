@@ -2,6 +2,13 @@
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
 
+# Bluetooth
+persist.bluetooth.a2dp_offload.cap=sbc-aac
+persist.bluetooth.a2dp_offload.disabled=true
+ro.bluetooth.a2dp_offload.supported=true
+ro.vendor.bt.platform=connac1x
+ro.vendor.mtk.bt_sap_enable=true
+
 # Connsys
 persist.vendor.connsys.chipid=-1
 persist.vendor.connsys.dynamic.dump=0
