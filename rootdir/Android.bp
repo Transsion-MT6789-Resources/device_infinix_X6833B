@@ -5,34 +5,6 @@
 //
 
 prebuilt_etc {
-    name: "factory_init.connectivity.common.rc",
-    src: "etc/init/hw/factory_init.connectivity.common.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "factory_init.connectivity.rc",
-    src: "etc/init/hw/factory_init.connectivity.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "factory_init.project.rc",
-    src: "etc/init/hw/factory_init.project.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "factory_init.rc",
-    src: "etc/init/hw/factory_init.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
     name: "init_connectivity.rc",
     src: "etc/init/hw/init_connectivity.rc",
     sub_dir: "init/hw",
@@ -124,55 +96,6 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.sensor_2_0.rc",
     src: "etc/init/hw/init.sensor_2_0.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "meta_init.connectivity.common.rc",
-    src: "etc/init/hw/meta_init.connectivity.common.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "meta_init.connectivity.rc",
-    src: "etc/init/hw/meta_init.connectivity.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "meta_init.modem.rc",
-    src: "etc/init/hw/meta_init.modem.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "meta_init.project.rc",
-    src: "etc/init/hw/meta_init.project.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "meta_init.rc",
-    src: "etc/init/hw/meta_init.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "meta_init.vendor.rc",
-    src: "etc/init/hw/meta_init.vendor.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
-    name: "multi_init.rc",
-    src: "etc/init/hw/multi_init.rc",
     sub_dir: "init/hw",
     vendor: true
 }

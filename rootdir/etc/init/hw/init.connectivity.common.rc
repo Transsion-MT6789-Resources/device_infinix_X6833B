@@ -1,8 +1,6 @@
 # MTK connectivity .rc configure
 #NFBD:add for nfc by yunfei.wu 20211218
-import /vendor/etc/init/hw/init.stnfc.rc
 on post-fs-data
-
 
 #
 # Connectivity related device nodes & configuration (begin)

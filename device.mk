@@ -71,10 +71,6 @@ PRODUCT_PACKAGES += \
 
 # Init files
 PRODUCT_PACKAGES += \
-    factory_init.connectivity.common.rc \
-    factory_init.connectivity.rc \
-    factory_init.project.rc \
-    factory_init.rc \
     fstab.mt6789 \
     fstab.mt6789.vendor_ramdisk \
     init_connectivity.rc \
@@ -91,13 +87,6 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.recovery.usb.rc \
     init.sensor_2_0.rc \
-    meta_init.connectivity.common.rc \
-    meta_init.connectivity.rc \
-    meta_init.modem.rc \
-    meta_init.project.rc \
-    meta_init.rc \
-    meta_init.vendor.rc \
-    multi_init.rc \
     ueventd.mt6789.rc
 
 # Include GSI keys
