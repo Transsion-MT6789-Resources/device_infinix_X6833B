@@ -35,6 +35,9 @@ ro.hardware.gatekeeper=trustonic
 ro.crypto.volume.filenames_mode=aes-256-cts
 ro.hardware.kmsetkey=trustonic
 
+# Sensors
+ro.vendor.mtk.sensor.support=yes
+
 # TEE
 ro.vendor.mtk_trustonic_tee_support=1
 

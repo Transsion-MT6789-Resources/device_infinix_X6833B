@@ -46,6 +46,11 @@ $(KEYMASTER_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Linking $@"
 	@ln -sf $(subst default,trustonic,$(notdir $@)) $@
 
+SENSOR_SYMLINKS := $(TARGET_OUT_VENDOR)/lib64/hw/sensors.$(TARGET_BOARD_PLATFORM).so
+$(SENSOR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	$(hide) echo "Linking $(notdir $@)"
+	@ln -sf sensors.mediatek.V2.0.so $@
+
 VENDOR_PLATFORM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/, $(strip $(shell cat $(DEVICE_PATH)/symlink/vendor.txt)))
 $(VENDOR_PLATFORM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Linking $(notdir $@)"
@@ -56,6 +61,7 @@ ALL_DEFAULT_INSTALLED_MODULES += \
 	$(DISPLAY_SYMLINKS) \
 	$(GATEKEEPER_SYMLINKS) \
 	$(KEYMASTER_SYMLINKS) \
+	$(SENSOR_SYMLINKS) \
 	$(VENDOR_PLATFORM_SYMLINKS)
 
 endif
