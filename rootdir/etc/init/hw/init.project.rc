@@ -6,9 +6,9 @@ on init
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
     mkdir /storage/usbotg 0700 root root
 
-    # Set xiaomi touch permissions
-    chown system system /dev/xiaomi-touch
-    chmod 0660 /dev/xiaomi-touch
+    # Set gesture touch permissions
+    chown system system /proc/gesture_function
+    chmod 0660 /proc/gesture_function
 
 on post-fs-data
 

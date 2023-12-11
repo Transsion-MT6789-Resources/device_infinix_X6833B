@@ -9,15 +9,6 @@
 #include <android-base/logging.h>
 #include <sys/ioctl.h>
 
-// defines from drivers/input/touchscreen/xiaomi/xiaomi_touch.h
-#define SET_CUR_VALUE 0
-#define Touch_Doubletap_Mode 14
-
-#define TOUCH_DEV_PATH "/dev/xiaomi-touch"
-#define TOUCH_ID 0
-#define TOUCH_MAGIC 0x5400
-#define TOUCH_IOC_SETMODE TOUCH_MAGIC + SET_CUR_VALUE
-
 namespace aidl {
 namespace android {
 namespace hardware {
@@ -40,10 +31,7 @@ bool isDeviceSpecificModeSupported(Mode type, bool* _aidl_return) {
 bool setDeviceSpecificMode(Mode type, bool enabled) {
     switch (type) {
         case Mode::DOUBLE_TAP_TO_WAKE: {
-            int fd = open(TOUCH_DEV_PATH, O_RDWR);
-            int arg[3] = {TOUCH_ID, Touch_Doubletap_Mode, enabled ? 1 : 0};
-            ioctl(fd, TOUCH_IOC_SETMODE, &arg);
-            close(fd);
+            ::android::base::WriteStringToFile(enabled ? "cc1" : "cc2", TAP_TO_WAKE_NODE, true);
             return true;
         }
         default:
