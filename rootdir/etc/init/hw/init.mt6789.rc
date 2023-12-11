@@ -66,11 +66,6 @@ on late-init
 # mount different fs start
 
 on charger
-
-    #MD:delete XLBELHQQS-6425 for cache by xiaoxiang.xiong 20220616 start
-    #exec /system/bin/e2fsck -f -p /dev/block/by-name/cache
-    #mount ext4 /dev/block/by-name/cache /cache rw wait
-    #MD:delete XLBELHQQS-6425 for cache by xiaoxiang.xiong 20220616 end
     chmod 0660 /dev/spm
     chown system system /dev/spm
     start spm_script
@@ -97,10 +92,6 @@ on charger
 
     start fuelgauged
     start fuelgauged_nvram
-
-    chown system system /sys/class/leds/lcd-backlight/brightness
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/green/brightness
 
     # Stop bootprof
     write /proc/bootprof "0"
@@ -1152,6 +1143,16 @@ service osi /system/bin/osi
     disabled
     oneshot
     #seclabel u:r:osi:s0
+
+service vendor.charger /system/bin/charger
+    class charger
+    user system
+    group system graphics wakelock input
+    capabilities SYS_BOOT
+    file /dev/kmsg w
+    file /sys/fs/pstore/console-ramoops-0 r
+    file /sys/fs/pstore/console-ramoops r
+    file /proc/last_kmsg r
 
 #SPD: add resmonitor and smartpanel bind small core by rui.fu 20230117 start
 service spd_cpu_set_sh /vendor/bin/init.spd_cpu_set.sh
