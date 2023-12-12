@@ -155,6 +155,10 @@ PRODUCT_PACKAGES += \
     android.hardware.security.sharedsecret-V1-ndk_platform.vendor \
     libcppbor_external.vendor:64
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.lights-service.transsion
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
