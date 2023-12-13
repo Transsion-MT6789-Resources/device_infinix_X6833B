@@ -289,6 +289,10 @@ PRODUCT_SOONG_NAMESPACES += \
 # Updatable APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb-service.transsion
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.transsion
