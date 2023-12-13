@@ -30,7 +30,9 @@ lib64/arm.graphics-V1-ndk_platform.so
 lib64/libaalservice.so
 lib64/libaiselector.so
 lib64/libdpframework.so
+lib64/libDR.so
 lib64/libgpudataproducer.so
+lib64/libmnl.so
 lib64/libmtk_drvb.so
 lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so
 lib64/libneuron_adapter_mgvi.so
