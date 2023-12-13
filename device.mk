@@ -286,6 +286,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     hardware/transsion
 
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0.vendor
+
 # Updatable APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
