@@ -1,3 +1,4 @@
+bin/v3avpud.mt6789
 lib/egl/libGLES_mali.so
 lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
@@ -14,6 +15,11 @@ lib/libnir_neon_driver.so
 lib/libpq_cust_base.so
 lib/libpq_prot.so
 lib/libpqparamparser.so
+lib/libvcodec_utility.so
+lib/libvcodec_utility_v3a.so
+lib/libvcodecdrv.so
+lib/libvcodecdrv_v3a.so
+lib/libvpudv3a_vcodec.so
 lib64/egl/libGLES_mali.so
 lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so

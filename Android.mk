@@ -46,6 +46,13 @@ $(KEYMASTER_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Linking $@"
 	@ln -sf $(subst default,trustonic,$(notdir $@)) $@
 
+MEDIA_SYMLINKS := \
+	$(TARGET_OUT_VENDOR)/bin/v3avpud
+
+$(MEDIA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	$(hide) echo "Linking $@"
+	@ln -sf $(notdir $@).$(TARGET_BOARD_PLATFORM) $@
+
 SENSOR_SYMLINKS := $(TARGET_OUT_VENDOR)/lib64/hw/sensors.$(TARGET_BOARD_PLATFORM).so
 $(SENSOR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Linking $(notdir $@)"
@@ -61,6 +68,7 @@ ALL_DEFAULT_INSTALLED_MODULES += \
 	$(DISPLAY_SYMLINKS) \
 	$(GATEKEEPER_SYMLINKS) \
 	$(KEYMASTER_SYMLINKS) \
+	$(MEDIA_SYMLINKS) \
 	$(SENSOR_SYMLINKS) \
 	$(VENDOR_PLATFORM_SYMLINKS)
 
