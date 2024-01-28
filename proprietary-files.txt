@@ -1,4 +1,4 @@
-## x6833b package version: X6833B-H894DEFGHI-T-GL-231102V2897, unless stated otherwise
+## x6833b package version: X6833B-H894DEFGHI-T-GL-240103V3275, unless stated otherwise
 
 # AEE
 vendor/lib/libaedv.so
@@ -634,7 +634,6 @@ vendor/etc/security/cacerts/c491639e.0
 vendor/etc/security/cacerts/c51c224c.0
 vendor/etc/security/cacerts/c559d742.0
 vendor/etc/security/cacerts/c90bc37d.0
-vendor/etc/security/cacerts/cb156124.0
 vendor/etc/security/cacerts/cb1c3204.0
 vendor/etc/security/cacerts/ccc52f49.0
 vendor/etc/security/cacerts/cf701eeb.0
